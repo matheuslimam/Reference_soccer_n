@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Reference_reflc.board</title>
+</head>
+    <style>
+        body{
+         text-align: center;
+         background-color: #030635;
+         }
+         h1#title{
+             color: aqua;
+             text-transform: uppercase;
+             font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+         }
+         div#nav{
+             background: #00000098 ;
+             padding: 5px ;
+             margin:  0px 25px ;
+             border-radius: 10px;
+         }
+         div#determine{
+            background-color: #161947a8;
+            margin:  0px 50px ;
+            color: aqua;
+         }
+         input#btn1{
+             background-color: #00000098;
+             text-justify: auto;
+             color: aqua;
+             border-color: #030635;
+         }
+         input#btn2{
+             background-color: #00000098;
+             text-justify: auto;
+             color: aqua;
+             border-color: #030635;
+         }
+         area:hover ~ span {
+            display: block;
+         }
+         span {
+            display: none;
+            color: black;
+            background-color: #2b2d4171;
+            width: 13%;
+            padding: 0px;
+            border-radius: 5px;
+        }
+        span#imgboxtop {
+            position:relative;
+            top: -700px;
+            left: 80%;
+            
+        }
+        span#imgboxbottom {
+            position:relative;
+            top: -300px;
+            left: 80%;
+        }
+        span#imgboxflat {
+            position:relative;
+            top: -450px;
+            left: 55%;
+        }
+        span#imgboxex {
+            position:relative;
+            top: -460px;
+            left: 83%;
+        }
+        p#boxtitle{
+            font-size: 9pt;
+            font-style: bold;
+            text-align: center;
+            background-color:teal;
+            padding: 5px ;
+            margin:  -25px 0px 20px 0px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        div#number{
+            background-color: teal;
+            padding: 3px;
+            margin: 0px 0px -10px 0px;
+            border-radius: 2px;
+        }
+        .pointer {cursor: pointer;}
+        
+        /*PAGINA AUXILIAR*/
+
+        p#p_info1{
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 15pt;
+            margin: 0px 600px 0px 90px;
+            text-align: justify;
+            display:inline-block;
+        }
+        p#p_info2{
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 15pt;
+            margin: 0px 90px 0px 600px;
+            text-align: justify;
+            display:inline-block;
+        }
+        div#keys{
+            background-color:rgba(147, 162, 185, 0.404);
+            padding: 0px;
+            border-radius: 5px;
+            position:relative;
+        }
+        div#plus_id{
+            position:relative;
+            padding: 0px;
+            margin: 0px;
+        }
+        p#textkey{
+            color: whitesmoke;
+            font-family: 'Balsamiq Sans', cursive;
+            text-transform: uppercase;
+            text-decoration: bold;
+            padding: 15px 0px 0px 0px;
+            margin: 0px;
+        } 
+        p#plus{
+            color: whitesmoke;
+            font-family: 'Balsamiq Sans', cursive;
+            text-transform: uppercase;
+            text-decoration: bold;
+            font-size: 18pt;
+        }
+        .keyCtrl{width: 70px;height: 50px;}
+        .keyF{width: 50px;height: 50px;}
+        .nav{
+            list-style-type: none;
+            margin-left: -100px;
+            /*background-color: rgb(2, 99, 99);
+            margin: 0px 225px;
+            border-radius: 4px;*/
+            margin-top: -25px;
+            
+        }
+        .nav li{
+            display: inline-block;
+        }
+        .txtexpl{
+            color: whitesmoke;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 18pt;
+        }
+        
+
+    </style>
+<body onkeydown="tecla(event)">
+    
+    <!--AUXILIAR PAGES-->
+    <div id="auxpgs" style="display: none;">
+        
+        <!--BUTTON-->
+        <div id="btnss">
+            <input type="button" value="Bottom" id="btn1" onclick="bottomf()"><input type="button" value="   Top   " id="btn2" onclick="topf()"><input type="button" value="About" id="btn1" onclick="aboutf()" >
+        </div>
+
+        <!--BOTTOM-->
+        <div id="bottom_html">
+            <img src="imagens/BoardModel/placabottom5.png" id="imgbt" usemap="#bottommap"/></br>
+        </div>
+
+        <!--TOP-->
+        <div id="top_html" >
+            <img src="imagens/BoardModel/placatop5.png" id="imgtp" usemap="#topmmap" /></br>
+        </div>
+
+        <!--ABOUT-->
+
+        <div id="about_html">
+         </br><h1 id="title">ABOUT</h1>
+                <p style="margin-top:-25px">_____________</p>
+                <p>This board are ... </p></br>
+        </div>
+
+        <!--MOTORS-->
+
+        <div id="motors_html">
+         </br><h1 id="title">MOTORS</h1>
+                <p style="margin-top:-25px">_____________</p>
+                <p>This motors are ... </p></br>
+        </div>
+
+        <!--RESISTORS-->
+
+        <div  id="resistors_html">
+         </br><h1 id="title">RESISTORS</h1>
+                <p style="margin-top:-25px">_____________</p>
+                <p>This resistors are ... </p></br>
+        </div>
+        
+        <!--PHOTOTRANSISTORS-->
+
+        <div  id="phototransistors_html">
+         </br><h1 id="title">PHOTOTRANSISTORS</h1>
+                <p style="margin-top:-25px">_____________</p>
+                <p>This fototransistors are ... </p></br>
+        </div>
+
+        <!--LEDS-->
+
+        <div  id="leds_html">
+         </br><h1 id="title">LEDS</h1>
+                <p style="margin-top:-25px">_____________</p>
+                <p>This leds are ... </p></br>
+        </div>
+
+        <!--CONECTIONS-->
+
+        <div  id="conections_html">
+            </br><h1 id="title">FLAT CABLE</h1>
+                <p style="margin-top:-25px">_____________</p>
+                <img src="imagens/BoardModel/flat/FLAT.png" id="imgtp" usemap="#Flatmap" style="margin-bottom: 100px"/></br>
+        </div>
+
+        <!--GND-->
+
+        <div  id="gnd_html">
+            </br><h1 id="title">GND</h1>
+                <p style="margin-top:-25px">_____________</p></br>
+        </div>
+
+        <!--VCC-->
+
+        <div  id="vcc_html">
+            </br><h1 id="title">VCC</h1>
+                <p style="margin-top:-25px">_____________</p></br>
+        </div>
+
+        <!--HASBALL-->
+
+        <div  id="hasball_html">
+            </br><h1 id="title">HASS BALL</h1>
+                <p style="margin-top:-25px">_____________</p></br>
+        </div>
+
+        <!--INFO-->
+
+        <div  id="info_html">
+            </br><h1 id="title">informações</h1>
+            <p style="margin-top:-25px">_____________</p>
+            </br><p id="p_info1">&nbsp;&nbsp;&nbsp;&nbsp;A função desta página tem como princípio facilitar a vizualização de elementos dentro de um contexto específico e classifica-los de forma facíl e rapida! Com imagens interativas relacionadas a cada tópico tente passar o cursor por cima do que deseja entender melhor ou clique no que deseja e será redirecionado a um conteúdo especifíco como no exemplo ao lado.</p><img style="margin-top: -210px;margin-left: 500px;" src="imagens/elements/example.png" usemap="#exmap"/>
+            <p id="p_info2">&nbsp;&nbsp;&nbsp;&nbsp;As páginas auxiliares, botões e funcionalidades adicionais também podem ser ativadas seguindo alguns comandos de teclado executando assim as mesmas funcionalidades que o cursor tem. Para ver cada funcionalidade clique no teclado ao lado ou <a onclick="keyboardf()" class="pointer" style="color: skyblue;">clique aqui</a> para ser redirecionado para as instruções de teclado.</p><img style="margin-right: 525px;margin-top:-180px;" onclick="keyboardf()" class="pointer" src="imagens/elements/keyboard.png"/>
+            <p id="p_info1" style="margin-top: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        </br></div>
+
+        <!--TECLADO-->
+
+        <div  id="keyboard_html">
+        </br><h1 id="title">comandos de teclado</h1>
+            <p style="margin-top:-25px">_____________</p></br>
+            <ul class="nav" style="margin-right: -34px;">
+                <li><div id="keys" class="keyCtrl"><p id="textkey">Alt</p></div></li>
+                <li><p id="plus">&nbsp; + &nbsp;</p></li>
+                <li><div id="keys" class="keyF"><p id="textkey">T</p></div></li>
+                <li><p id="plus">&nbsp; ⟶ &nbsp;</p></li></li>
+                <li><p class="txtexpl">Abre a página Top da placa</p></li>
+            </ul>
+            <ul class="nav" style="margin-right: -65px;">
+                <li><div id="keys" class="keyCtrl"><p id="textkey">Alt</p></div></li>
+                <li><p id="plus">&nbsp; + &nbsp;</p></li>
+                <li><div id="keys" class="keyF"><p id="textkey">B</p></div></li>
+                <li><p id="plus">&nbsp; ⟶ &nbsp;</p></li></li>
+                <li><p class="txtexpl">Abre a página Bottom da placa</p></li>
+            </ul>
+            <ul class="nav" style="margin-right: -57px;">
+                <li><div id="keys" class="keyCtrl"><p id="textkey">Alt</p></div></li>
+                <li><p id="plus">&nbsp; + &nbsp;</p></li>
+                <li><div id="keys" class="keyF"><p id="textkey">I</p></div></li>
+                <li><p id="plus">&nbsp; ⟶ &nbsp;</p></li></li>
+                <li><p class="txtexpl">Abre a página de informações</p></li>
+            </ul>
+            <ul class="nav" style="margin-right: -9px;">
+                <li><div id="keys" class="keyCtrl"><p id="textkey">Alt</p></div></li>
+                <li><p id="plus">&nbsp; + &nbsp;</p></li>
+                <li><div id="keys" class="keyF"><p id="textkey">M</p></div></li>
+                <li><p id="plus">&nbsp; ⟶ &nbsp;</p></li></li>
+                <li><p class="txtexpl">Abre os botões de menu</p></li>
+            </ul>
+            <ul class="nav" style="margin-right: 20px;">
+                <li><div id="keys" class="keyCtrl"><p id="textkey">Alt</p></div></li>
+                <li><p id="plus">&nbsp; + &nbsp;</p></li>
+                <li><div id="keys" class="keyF"><p id="textkey">A</p></div></li>
+                <li><p id="plus">&nbsp; ⟶ &nbsp;</p></li></li>
+                <li><p class="txtexpl">Abre a página About</p></li>
+            </ul>
+            <ul class="nav" style="margin-right: -35px;">
+                <li><div id="keys" class="keyCtrl"><p id="textkey">Alt</p></div></li>
+                <li><p id="plus">&nbsp; + &nbsp;</p></li>
+                <li><div id="keys" class="keyF"><p id="textkey">K</p></div></li>
+                <li><p id="plus">&nbsp; ⟶ &nbsp;</p></li></li>
+                <li><p class="txtexpl">Abre a página de comandos</p></li>
+            </ul>
+            <ul class="nav">
+                <li><div id="keys" class="keyCtrl"><p id="textkey">Ctrl</p></div></li>
+                <li><p id="plus">&nbsp; + &nbsp;</p></li>
+                <li><div id="keys" class="keyF"><p id="textkey">F1</p></div></li>
+                <li><p id="plus">&nbsp; ⟶ &nbsp;</p></li></li>
+                <li><p class="txtexpl">Abre a página motores</p></li>
+            </ul>
+            <ul class="nav" style="margin-right: -20px;">
+                <li><div id="keys" class="keyCtrl"><p id="textkey">ctrl</p></div></li>
+                <li><p id="plus">&nbsp; + &nbsp;</p></li>
+                <li><div id="keys" class="keyF"><p id="textkey">F2</p></div></li>
+                <li><p id="plus">&nbsp; ⟶ &nbsp;</p></li></li>
+                <li><p class="txtexpl">Abre a página resistores</p></li>
+            </ul>
+            <ul class="nav" style="margin-right: -75px;">
+                <li><div id="keys" class="keyCtrl"><p id="textkey">ctrl</p></div></li>
+                <li><p id="plus">&nbsp; + &nbsp;</p></li>
+                <li><div id="keys" class="keyF"><p id="textkey">F3</p></div></li>
+                <li><p id="plus">&nbsp; ⟶ &nbsp;</p></li></li>
+                <li><p class="txtexpl">Abre a página fototransistores</p></li>
+            </ul>
+            <ul class="nav" style="margin-right: 31px;">
+                <li><div id="keys" class="keyCtrl"><p id="textkey">ctrl</p></div></li>
+                <li><p id="plus">&nbsp; + &nbsp;</p></li>
+                <li><div id="keys" class="keyF"><p id="textkey">F6</p></div></li>
+                <li><p id="plus">&nbsp; ⟶ &nbsp;</p></li></li>
+                <li><p class="txtexpl">Abre a página LEDS</p></li>
+            </ul>
+            <ul class="nav" style="margin-right: -8px;">
+                <li><div id="keys" class="keyCtrl"><p id="textkey">ctrl</p></div></li>
+                <li><p id="plus">&nbsp; + &nbsp;</p></li>
+                <li><div id="keys" class="keyF"><p id="textkey">F7</p></div></li>
+                <li><p id="plus">&nbsp; ⟶ &nbsp;</p></li></li>
+                <li><p class="txtexpl">Abre a página Flat cabe</p></li>
+            </ul>
+            <ul class="nav" style="margin-right: 38px;">
+                <li><div id="keys" class="keyCtrl"><p id="textkey">ctrl</p></div></li>
+                <li><p id="plus">&nbsp; + &nbsp;</p></li>
+                <li><div id="keys" class="keyF"><p id="textkey">F8</p></div></li>
+                <li><p id="plus">&nbsp; ⟶ &nbsp;</p></li></li>
+                <li><p class="txtexpl">Abre a página GND</p></li>
+            </ul>
+            <ul class="nav" style="margin-right: 39px;">
+                <li><div id="keys" class="keyCtrl"><p id="textkey">ctrl</p></div></li>
+                <li><p id="plus">&nbsp; + &nbsp;</p></li>
+                <li><div id="keys" class="keyF"><p id="textkey">F9</p></div></li>
+                <li><p id="plus">&nbsp; ⟶ &nbsp;</p></li></li>
+                <li><p class="txtexpl">Abre a página VCC</p></li>
+            </ul>
+            <ul class="nav" style="margin-right: -11px;">
+                <li><div id="keys" class="keyCtrl"><p id="textkey">ctrl</p></div></li>
+                <li><p id="plus">&nbsp; + &nbsp;</p></li>
+                <li><div id="keys" class="keyF"><p id="textkey">F10</p></div></li>
+                <li><p id="plus">&nbsp; ⟶ &nbsp;</p></li></li>
+                <li><p class="txtexpl">Abre a página hass ball</p></li>
+            </ul>
+        </br></div>
+
+    </div>
+
+    <!--INICIAL PAGE-->
+    <div id="imagelogo">
+            <a href=""><img src="imagens/externImgs/APRSTEST.png" /></a>
+    </div> 
+        <div id="nav" >
+            <img class="pointer" onclick="btns()" src="https://img.icons8.com/fluent/30/000000/menu.png"/><h1 id="title" style="display:inline-block; margin-left: 345px;" >Reflect Board Reference</h1><img class="pointer" onclick="infof()" src="https://img.icons8.com/offices/24/000000/info-squared.png" style="margin-left: 330px;" />
+        </div>
+    <div id="determine">   
+        <div id="side">
+
+        </div> 
+            <div id="board">
+                <div id="boardimg">
+                    <div id="ini" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"><br/>Para começar selecione o botão de informações ⓘ ou o de menu ☰ <br/><br/></div>
+                </div>
+
+                <!--*MAPS*-->
+
+                 <div id="map">
+
+                    <!--************-->
+                    <!--*BOTTOM MAP*-->
+                    <!--************-->
+
+                     <map name="bottommap" >
+                       
+                        <!--PHOTOTRANSISTORS-->
+                        <!--S1--><div><area shape="poly" coords="577,354,581,367,576,368,571,355" onclick="phototransistorsf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">phototransistor s1</p></span></div>
+                        <!--S2--><div><area shape="poly" coords="529,275,538,285,533,289,525,279" onclick="phototransistorsf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">phototransistor s2</p></span></div>
+                        <!--S3--><div><area shape="poly" coords="446,231,459,235,458,241,445,237" onclick="phototransistorsf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">phototransistor s3</p></span></div>
+                        <!--S4--><div><area shape="poly" coords="353,235,366,232,368,237,355,241" onclick="phototransistorsf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">phototransistor s4</p></span></div>
+                        <!--S5--><div><area shape="poly" coords="274,285,284,276,288,280,278,289" onclick="phototransistorsf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">phototransistor s5</p></span></div>
+                        <!--S6--><div><area shape="poly" coords="231,367,234,354,240,356,237,368" onclick="phototransistorsf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">phototransistor s6</p></span></div>
+                        <!--S7--><div><area shape="poly" coords="235,460,231,447,236,446,240,458" onclick="phototransistorsf()"  ><span id="imgboxbottom"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">phototransistor s7</p></span></div>
+                        <!--S8--><div><area shape="poly" coords="284,539,274,529,279,525,289,535" onclick="phototransistorsf()"  ><span id="imgboxbottom"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">phototransistor s8</p></span></div>
+                        <!--S9--><div><area shape="poly" coords="367,582,353,578,355,573,367,576" onclick="phototransistorsf()"  ><span id="imgboxbottom"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">phototransistor s9</p></span></div>
+                        <!--S10--><div><area shape="poly" coords="459,578,447,582,444,577,457,573" onclick="phototransistorsf()"  ><span id="imgboxbottom"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">phototransistor s10</p></span></div>
+                        <!--S11--><div><area shape="poly" coords="537,529,528,538,524,533,533,525" onclick="phototransistorsf()"  ><span id="imgboxbottom"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">phototransistor s11</p></span></div>
+                        <!--S12--><div><area shape="poly" coords="581,447,578,460,572,457,576,445" onclick="phototransistorsf()"  ><span id="imgboxbottom"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">phototransistor s12</p></span></div>
+                        
+                        <!--------------------->
+                        
+                        <!--LEDS-->
+                        <!--L1--><div><area shape="poly" coords="557,310,566,324,559,328,550,314" onclick="LEDf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 1</p></span></div>
+                        <!--L2--><div><area shape="poly" coords="489,247,503,255,499,261,485,254" onclick="LEDf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 2</p></span></div>
+                        <!--L3--><div><area shape="rect" coords="397,227,414,236" onclick="LEDf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 3</p></span></div>
+                        <!--L4--><div><area shape="poly" coords="309,255,322,247,328,253,313,262" onclick="LEDf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 4</p></span></div>
+                        <!--L5--><div><area shape="poly" coords="246,323,255,310,262,314,259,329" onclick="LEDf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 5</p></span></div>
+                        <!--L6--><div><area shape="rect" coords="225,398,235,416" onclick="LEDf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 6</p></span></div>
+                        <!--L7--><div><area shape="poly" coords="254,504,246,490,253,485,262,499" onclick="LEDf()"  ><span id="imgboxbottom"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 7</p></span></div>
+                        <!--L8--><div><area shape="poly" coords="323,568,309,557,313,551,326,560" onclick="LEDf()"  ><span id="imgboxbottom"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 8</p></span></div>
+                        <!--L9--><div><area shape="rect" coords="397,577,414,587" onclick="LEDf()"  ><span id="imgboxbottom"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 9</p></span></div>
+                        <!--L10--><div><area shape="poly" coords="503,559,489,567,484,560,498,551" onclick="LEDf()"  ><span id="imgboxbottom"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 10</p></span></div>
+                        <!--L11--><div><area shape="poly" coords="566,490,557,504,551,500,559,486" onclick="LEDf()"  ><span id="imgboxbottom"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 11</p></span></div>
+                        <!--L12--><div><area shape="rect" coords="577,399,586,416" onclick="LEDf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 12</p></span></div>
+                        <!--L13--><div><area shape="poly" coords="559,456,563,441,555,438,552,453" onclick="LEDf()"  ><span id="imgboxbottom"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 13</p></span></div>
+                        <!--L14--><div><area shape="poly" coords="514,527,525,515,520,510,508,520," onclick="LEDf()"  ><span id="imgboxbottom"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 14</p></span></div>
+                        <!--L15--><div><area shape="poly" coords="440,565,456,560,454,552,438,557" onclick="LEDf()"  ><span id="imgboxbottom"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 15</p></span></div>
+                        <!--L16--><div><area shape="poly" coords="357,560,373,565,374,557,359,552" onclick="LEDf()"  ><span id="imgboxbottom"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 16</p></span></div>
+                        <!--L17--><div><area shape="poly" coords="286,515,298,527,303,520,292,510" onclick="LEDf()"  ><span id="imgboxbottom"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 17</p></span></div>
+                        <!--L18--><div><area shape="poly" coords="248,442,253,457,260,455,256,439" onclick="LEDf()"  ><span id="imgboxbottom"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 18</p></span></div>
+                        <!--L19--><div><area shape="poly" coords="252,357,248,372,256,375,261,359" onclick="LEDf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 19</p></span></div>
+                        <!--L20--><div><area shape="poly" coords="298,287,286,298,292,304,303,293" onclick="LEDf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 20</p></span></div>
+                        <!--L21--><div><area shape="poly" coords="372,249,355,254,359,261,374,257" onclick="LEDf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 21</p></span></div>
+                        <!--L22--><div><area shape="poly" coords="455,253,441,249,438,257,453,262" onclick="LEDf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 22</p></span></div>
+                        <!--L23--><div><area shape="poly" coords="524,295,514,287,508,293,520,304" onclick="LEDf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 23</p></span></div>
+                        <!--L24--><div><area shape="poly" coords="564,373,559,357,551,359,556,375" onclick="LEDf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/LED.png"/><p id="boxtitle">LED 24</p></span></div>
+                       
+                        <!--------------------->
+                        
+                        <!--FLAT CONECTION-->
+                        <div><area shape="rect" coords="147,337,174,408" onclick="conectionf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/caboflat.png"/><p id="boxtitle">Flat conection</p></span></div>
+                        <!--VCC-->
+                        <div><area shape="poly" coords="154,337,154,318,196,318,196,323,159,323,159,337" onclick="VCCf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/VCC.png"/><p id="boxtitle">VCC</p></span></div>
+                        <!--GND-->
+                        <div><area shape="rect" coords="162,331,290,338" onclick="GNDf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/GND.png"/><p id="boxtitle">GND</p></span></div>
+                        <div><area shape="poly" coords="269,402,269,378,278,367,379,348,288,337,288,328,318,299,328,299,337,290,347,290,356,279,366,279,375,270,436,270,446,279,465,279,474,289,484,289,514,319,514,329,524,338,524,349,534,358,534,367,543,377,543,436,534,447,534,465,524,475,524,486,494,516,483,516,475,525,464,525,455,535,446,535,437,544,376,544,366,535,347,355,338,526,328,526,298,495,298,485,289,476,289,464,278,457,278,447,269,436,269,404,274,404,274,434,284,445,284,455,294,464,294,473,303,482,303,492,330,519,340,519,350,529,370,529,378,539,434,539,442,530,453,530,463,520,472,520,481,511,492,510,518,484,519,473,528,463,528,443,538,434,538,379,528,370,528,360,518,350,518,340,509,331,509,321,482,295,472,295,462,285,443,285,433,275,378,276,369,285,359,285,349,294,340,294,331,304,320,304,293,331,293,341,284,350,284,370,275,379,275,402" onclick="GNDf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/GND.png"/><p id="boxtitle">GND</p></span></div>
+
+                        <!--------------------->
+
+                    </map>
+                    
+                    <!--*********-->
+                    <!--*TOP MAP*-->
+                    <!--*********-->
+
+                    <map name="topmmap" >
+
+                        <!--FLAT CONECTION-->
+                        <div><area shape="rect" coords="641,328,661,407" onclick="conectionf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/caboflat.png"/><p id="boxtitle">Flat conection</p></span></div>
+                         <!--VCC-->
+                        <div><area shape="poly" coords="202,319,221,290,220,270,269,222,288,220,319,193,365,192,370,187,450,188,471,200,491,201,520,222,544,222,591,269,593,290,619,316,621,366,630,377,630,444,591,508,593,525,496,622,448,622,436,633,367,631,338,614,319,612,291,595,269,594,235,558,231,536,200,504,200,454,183,437,181,368,200,340,322,198,369,199,375,193,449,193,468,206,491,208,520,228,538,228,584,273,585,291,614,324,615,370,623,379,623,441,593,489,586,498,586,517,492,614,444,616,434,623,369,625,343,607,323,605,293,586,272,586,239,551,239,534,205,502,205,450,188,435,188,372,205,344,207,319,227,293,227,275,270,226,293,230" onclick="VCCf()"  ><span id="imgboxtop"><div id="number"></div><img  src="imagens/elements/VCC.png"/><p id="boxtitle">VCC</p></span></div>
+
+                        <!--------------------->
+
+                        <!--RESISTORS-->
+                        <div><area shape="rect" coords="394,244,417,255" onclick="resistorsf()" ><span id="imgboxtop"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 3</p></span></div>
+                        <div><area shape="poly" coords="423,243,433,247,431,267,418,267,423,243" onclick="resistorsf()" ><span id="imgboxtop"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 34</p></span></div>
+                        <div><area shape="poly" coords="470,234,479,237,470,258,462,254" onclick="resistorsf()" ><span id="imgboxtop"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 22</p></span></div>
+                        <div><area shape="poly" coords="477,260,496,273,490,282,472,267" onclick="resistorsf()" ><span id="imgboxtop"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 2</p></span></div>
+                        <div><area shape="poly" coords="517,262,526,267,509,282,503,276" onclick="resistorsf()" ><span id="imgboxtop"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 35</p></span></div>
+                        <div><area shape="poly" coords="544,288,554,295,537,314,526,304" onclick="resistorsf()" ><span id="imgboxtop"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 23</p></span></div>
+                        <div><area shape="poly" coords="541,316,552,334,541,340,531,321" onclick="resistorsf()" ><span id="imgboxtop"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 1</p></span></div>
+                        <div><area shape="poly" coords="574,334,580,342,558,357,552,344" onclick="resistorsf()" ><span id="imgboxtop"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 36</p></span></div>
+                        <div><area shape="poly" coords="587,375,565,379,567,388,589,387" onclick="resistorsf()" ><span id="imgboxtop"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 24</p></span></div>
+                        <div><area shape="poly" coords="558,396,569,396,571,422,559,422" onclick="resistorsf()" ><span id="imgboxtop"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 12</p></span></div>
+                        <div><area shape="poly" coords="567,424,589,429,586,439,565,435" onclick="resistorsf()" ><span id="imgboxbottom"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 25</p></span></div>
+                        <div><area shape="poly" coords="541,454,561,463,558,474,537,465" onclick="resistorsf()" ><span id="imgboxbottom"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 13</p></span></div>
+                        <div><area shape="poly" coords="552,478,541,497,533,491,544,476" onclick="resistorsf()" ><span id="imgboxbottom"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 11</p></span></div>
+                        <div><area shape="poly" coords="522,491,539,506,533,513,515,498" onclick="resistorsf()" ><span id="imgboxbottom"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 26</p></span></div>
+                        <div><area shape="poly" coords="509,530,524,547,515,554,502,536" onclick="resistorsf()" ><span id="imgboxbottom"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 14</p></span></div>
+                        <div><area shape="poly" coords="470,543,490,532,496,543,477,554" onclick="resistorsf()" ><span id="imgboxbottom"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 10</p></span></div>
+                        <div><area shape="poly" coords="461,560,470,554,477,577,470,582" onclick="resistorsf()" ><span id="imgboxbottom"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 27</p></span></div>
+                        <div><area shape="poly" coords="425,567,434,566,438,592,429,594" onclick="resistorsf()" ><span id="imgboxbottom"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 15</p></span></div>
+                        <div><area shape="poly" coords="395,558,418,558,418,571,393,571" onclick="resistorsf()" ><span id="imgboxbottom"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 9</p></span></div>
+                        <div><area shape="poly" coords="377,566,388,569,384,590,373,590" onclick="resistorsf()" ><span id="imgboxbottom"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 28</p></span></div>
+                        <div><area shape="poly" coords="343,579,332,577,341,554,352,562" onclick="resistorsf()" ><span id="imgboxbottom"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 16</p></span></div>
+                        <div><area shape="poly" coords="319,532,339,545,332,554,313,541" onclick="resistorsf()" ><span id="imgboxbottom"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 8</p></span></div>
+                        <div><area shape="poly" coords="302,530,311,539,295,558,285,551" onclick="resistorsf()" ><span id="imgboxbottom"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 29</p></span></div>
+                        <div><area shape="poly" coords="289,491,295,498,280,513,270,506" onclick="resistorsf()" ><span id="imgboxbottom"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 17</p></span></div>
+                        <div><area shape="poly" coords="259,476,270,497,280,491,269,474" onclick="resistorsf()" ><span id="imgboxbottom"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 7</p></span></div>
+                        <div><area shape="poly" coords="274,457,276,467,257,476,254,467" onclick="resistorsf()" ><span id="imgboxbottom"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 30</p></span></div>
+                        <div><area shape="poly" coords="222,428,246,426,246,435,226,439" onclick="resistorsf()" ><span id="imgboxbottom"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 18</p></span></div>
+                        <div><area shape="poly" coords="242,396,252,396,255,418,242,418" onclick="resistorsf()" ><span id="imgboxtop"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 6</p></span></div>
+                        <div><area shape="poly" coords="224,375,246,379,246,390,222,385" onclick="resistorsf()" ><span id="imgboxtop"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 31</p></span></div>
+                        <div><area shape="poly" coords="254,351,233,344,235,332,257,340" onclick="resistorsf()" ><span id="imgboxtop"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle"Resistor 19></p></span></div>
+                        <div><area shape="poly" coords="269,340,259,336,270,314,280,323" onclick="resistorsf()" ><span id="imgboxtop"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 5</p></span></div>
+                        <div><area shape="poly" coords="265,288,282,303,276,310,257,295" onclick="resistorsf()" ><span id="imgboxtop"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 32</p></span></div>
+                        <div><area shape="poly" coords="287,265,296,258,310,275,302,282" onclick="resistorsf()" ><span id="imgboxtop"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 20</p></span></div>
+                        <div><area shape="poly" coords="315,271,334,260,339,269,321,284" onclick="resistorsf()" ><span id="imgboxtop"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 4</p></span></div>
+                        <div><area shape="poly" coords="334,237,345,234,351,256,341,258" onclick="resistorsf()" ><span id="imgboxtop"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 33</p></span></div>
+                        <div><area shape="poly" coords="375,245,386,243,392,267,380,267" onclick="resistorsf()" ><span id="imgboxtop"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/elements/resistor.png"/><p id="boxtitle">Resistor 21</p></span></div>
+                        
+                        
+                        <!--------------------->
+
+                        <!--MOTORS-->
+                        <!--M1--><div><area shape="poly" coords="126,510,233,448,284,535,177,598" onclick="motorsf()"  ><span id="imgboxbottom"><div id="number"></div><img width="128px" src="imagens/elements/motor.png"/><p id="boxtitle">Motor 1</p></span></div>
+                        <!--M2--><div><area shape="poly" coords="686,511,578,449,528,535,636,598" onclick="motorsf()"  ><span id="imgboxbottom"><div id="number"></div><img width="128px" src="imagens/elements/motor.png"/><p id="boxtitle">Motor 2</p></span></div>
+                        <!--M3--><div><area shape="rect" coords="355,111,456,235" onclick="motorsf()"  ><span id="imgboxtop"><div id="number"></div><img width="128px" src="imagens/elements/motor.png"/><p id="boxtitle">Motor 3</p></span></div>
+                        
+                        <!--------------------->
+
+                         <!--GITHUB--><div><area shape="rect" coords="614,165,668,212" href="https://github.com/febagni/Soccer-Aperture"  ><span id="imgboxtop"><div id="number"></div><img width="128px" src="imagens/elements/GitHub-Logo.wine.png"/><p id="boxtitle">GitHub Repository</p></span></div>
+
+                    </map>
+
+                    <!--**********-->
+                    <!--*FLAT MAP*-->
+                    <!--**********-->
+
+                    <map name="Flatmap">
+
+                        <!--LINE1-ENERGY-->
+                        <!--GND-P1--><div><area shape="rect" coords="369,105,388,123" onclick="GNDf()"  ><span id="imgboxflat"><div id="number"></div><img  src="imagens/elements/GND.png"/><p id="boxtitle">GND L1 P1</p></span></div>
+                        <!--VCC_P9--><div><area shape="circle" coords="406,115,13" onclick="VCCf()"  ><span id="imgboxflat"><div id="number"></div><img  src="imagens/elements/VCC.png"/><p id="boxtitle">VCC L1 P9</p></span></div>
+                        
+                        <!--------------------->
+                        
+                        <!--LINE2-HASBALL-->
+                        <!--HB_P2--><div><area shape="circle" coords="379,141,13" onclick="hasballf()"  ><span id="imgboxflat"><div id="number"></div><img  src="imagens/elements/hasball.png"/><p id="boxtitle">HasBall L2 P2</p></span></div>
+                        <!--HB_P10--><div><area shape="circle" coords="406,141,13" onclick="hasballf()"  ><span id="imgboxflat"><div id="number"></div><img  src="imagens/elements/hasball.png"/><p id="boxtitle">HasBall L2 P10</p></span></div>
+                        
+                        <!--------------------->
+                        
+                        <!--LINE3-PHOTOTRST-->
+                        <!--PH_P3--><div><area shape="circle" coords="379,168,13" onclick="phototransistorsf()"  ><span id="imgboxflat"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">fototransistor L3 P3</p></span></div>
+                        <!--PH_P11--><div><area shape="circle" coords="406,168,13" onclick="phototransistorsf()"  ><span id="imgboxflat"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">fototransistor L3 P11</p></span></div>
+                        <!--PH_P4--><div><area shape="circle" coords="379,195,13" onclick="phototransistorsf()"  ><span id="imgboxflat"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">fototransistor L3 P4</p></span></div>
+                        <!--PH_P12--><div><area shape="circle" coords="406,195,13" onclick="phototransistorsf()"  ><span id="imgboxflat"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">fototransistor L3 P12</p></span></div>
+                        <!--PH_P5--><div><area shape="circle" coords="379,222,13" onclick="phototransistorsf()"  ><span id="imgboxflat"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">pfototransistor L3 P5</p></span></div>
+                        <!--PH_P13--><div><area shape="circle" coords="406,222,13" onclick="phototransistorsf()"  ><span id="imgboxflat"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">fototransistor L3 P13</p></span></div>
+                        <!--PH_P6--><div><area shape="circle" coords="379,249,13" onclick="phototransistorsf()"  ><span id="imgboxflat"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">fototransistor L3 P6</p></span></div>
+                        <!--PH_P14--><div><area shape="circle" coords="406,249,13" onclick="phototransistorsf()"  ><span id="imgboxflat"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">fototransistor L3 P14</p></span></div>
+                        <!--PH_P7--><div><area shape="circle" coords="379,276,13" onclick="phototransistorsf()"  ><span id="imgboxflat"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">fototransistor L3 P7</p></span></div>
+                        <!--PH_P15--><div><area shape="circle" coords="406,276,13" onclick="phototransistorsf()"  ><span id="imgboxflat"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">fototransistor L3 P15</p></span></div>
+                        <!--PH_P8--><div><area shape="circle" coords="379,303,13" onclick="phototransistorsf()"  ><span id="imgboxflat"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">fototransistor L3 P8</p></span></div>
+                        <!--PH_P16--><div><area shape="circle" coords="406,303,13" onclick="phototransistorsf()"  ><span id="imgboxflat"><div id="number"></div><img  src="imagens/elements/Fototransistor.png"/><p id="boxtitle">fototransistor L3 P16</p></span></div>
+                    
+                    </map>
+
+                    <map name="exmap">
+                        <div><area shape="rect" coords="200,128,286,158"  onclick="infof()"  ><span id="imgboxex"><div id="number"></div><img src="imagens/elements/paragraf.png"/><p id="boxtitle">Paragrafo 2</p></span></div>
+                        <div><area shape="rect" coords="100,128,193,157"  onclick="infof()"  ><span id="imgboxex"><div id="number"></div><img src="imagens/elements/paragraf.png"/><p id="boxtitle">Paragrafo 1</p></span></div>
+                        <div><area shape="rect" coords="179,62,206,88"  onclick="infof()"  ><span id="imgboxex"><div id="number"></div><img style="margin-bottom: 15px;" src="imagens/externImgs/APRSTEST.png"/><p id="boxtitle">Aperture Logo</p></span></div>
+                        <div><area shape="rect" coords="81,42,304,170"  onclick="infof()"  ><span id="imgboxex"><div id="number"></div><img  src="imagens/elements/tela.png"/><p id="boxtitle">Tela</p></span></div>
+                        <div><area shape="rect" coords="67,28,317,184"  onclick="infof()"  ><span id="imgboxex"><div id="number"></div><img  src="imagens/elements/monitor.png"/><p id="boxtitle">Monitor</p></span></div>
+                        
+                    </map>
+
+             </div>
+        </div>
+    </div>
+<div id="nav" style="padding: 25px;"></div>
+    <script>
+        //Seleciona a div onde ocorre todas as mudanças de pagina
+        var SCREEN = document.querySelector("div#boardimg");
+        var as;
+        //aparece os botoes
+        function btns(){
+            var btnsss = document.querySelector("div#btnss").innerHTML;
+            document.querySelector("div#side").innerHTML = btnsss;
+        }
+        //Pagina placa bottom
+        function bottomf(){
+            var bttm = document.querySelector("div#bottom_html").innerHTML;
+            SCREEN.innerHTML = bttm;
+        }
+
+        //Pagina placa top
+        function topf(){
+            var tp = document.querySelector("div#top_html").innerHTML;
+            SCREEN.innerHTML = tp;
+        }
+
+        //Pagina que explica a placa
+        function aboutf(){
+            var  about = document.querySelector("div#about_html").innerHTML;
+            SCREEN.innerHTML = about;
+        }
+
+        //Pagina dos motores
+        function motorsf(){
+            var  mtrs = document.querySelector("div#motors_html").innerHTML;
+            SCREEN.innerHTML = mtrs;
+        }
+
+        //Pagina dos resistores
+        function resistorsf(){
+            var restrs  = document.querySelector("div#resistors_html").innerHTML;
+            SCREEN.innerHTML = restrs;
+        }
+
+        //Pagina dos fototransistors
+        function phototransistorsf(){
+            var phts = document.querySelector("div#phototransistors_html").innerHTML;
+            SCREEN.innerHTML = phts;
+        }
+
+        //Pagina dos leds
+        function LEDf(){
+            var leds = document.querySelector("div#leds_html").innerHTML;
+            SCREEN.innerHTML = leds;
+        }
+        
+        //Pagina do cabo flat
+        function conectionf(){
+            var cnct = document.querySelector("div#conections_html").innerHTML;
+            SCREEN.innerHTML = cnct;
+        }
+
+        //Pagina do GND
+        function GNDf(){
+            var gnd = document.querySelector("div#gnd_html").innerHTML;
+            SCREEN.innerHTML = gnd;
+        }
+
+        //Pagina do VCC
+        function VCCf(){
+            var vcc = document.querySelector("div#vcc_html").innerHTML;
+            SCREEN.innerHTML = vcc;
+        }
+
+        //Pagina do hasball
+        function hasballf(){
+            var hasbll = document.querySelector("div#hasball_html").innerHTML;
+            SCREEN.innerHTML = hasbll;
+        }
+        function keyboardf(){
+            var kbrd = document.querySelector("div#keyboard_html").innerHTML;
+            SCREEN.innerHTML = kbrd;
+        }
+
+        //comandos de tecla
+        function tecla(event) {
+            var x = event.key;
+            var ctrl = event.ctrlKey;
+            var alt = event.altKey;
+            if(alt && x=="t" || alt && x=="T") topf() //tecla 'T' aciona o top
+            if(alt && x=="b" || alt && x=="B") bottomf () //tecla 'B' aciona o bottom
+            if(alt && x=="i" || alt && x=="I") infof () //tecla 'I' aciona o info
+            if(alt && x=="m" || alt && x=="M") btns() //tecla 'M' aciona o menu
+            if(alt && x=="a" || alt && x=="A") aboutf() //tecla 'A' aciona about
+            if(alt && x=="k" || alt && x=="K") keyboardf() //tecla 'K' aciona keyboard comandos
+            if(ctrl && x=="F1") motorsf() //tecla 'ctrl+F1' aciona os motores
+            if(ctrl && x=="F2") resistorsf() //tecla 'ctrl+F2' aciona os resistores
+            if(ctrl && x=="F3") phototransistorsf() //tecla 'ctrl+F3' aciona os fototransistores
+            if(ctrl && x=="F6") LEDf() //tecla 'ctrl+F6' aciona os LEDS
+            if(ctrl && x=="F7") conectionf() //tecla 'ctrl+F7' aciona conection
+            if(ctrl && x=="F8") GNDf() //tecla 'ctrl+F8' aciona o gnd
+            if(ctrl && x=="F9") VCCf() //tecla 'ctrl+F9' aciona o vcc
+            if(ctrl && x=="F10") hasballf() //tecla 'ctrl+F10' aciona hasball
+    }
+        function infof(){
+            var inf = document.querySelector("div#info_html").innerHTML;
+            SCREEN.innerHTML = inf;
+        }
+    </script>
+</body>
+</html>
