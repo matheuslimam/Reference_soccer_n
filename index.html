@@ -11,95 +11,153 @@
 </head>
 <body onkeydown="tecla(event)">
     
-    <!--AUXILIAR PAGES--> 
+    <!-- SECTION AUXILIAR PAGES--> 
     <div id="auxpgs" style="display: none;">
         
-        <!--BUTTON-->
+        
+        <!--SECTION BUTTON-->
+
+        <!--NOTE div#id = btnss-->
+        <!--Aqui estão os botões de seleção para as referencias principal-->
         <div id="btnss">
             <input type="button" value="Bottom" id="btn1" onclick="bottomf()"><input type="button" value="   Top   " id="btn2" onclick="topf()"><input type="button" value="About" id="btn1" onclick="aboutf()" >
         </div>
+        
+        <!--!SECTION BUTTON-->
 
-        <!--BOTTOM-->
+
+        <!--SECTION BOTTOM-->
+
+        <!--NOTE div#id = bottom_html-->
+        <!--Página bottom da placa-->
         <div id="bottom_html">
             <img src="imagens/BoardModel/placabottom5.png" id="imgbt" usemap="#bottommap"/></br>
         </div>
 
-        <!--TOP-->
+        <!--!SECTION BOTTOM-->
+
+
+        <!--SECTION TOP-->
+
+        <!--NOTE div#id = top_html-->
+        <!--Página top da placa-->
         <div id="top_html" >
             <img src="imagens/BoardModel/placatop5.png" id="imgtp" usemap="#topmmap" /></br>
         </div>
 
-        <!--ABOUT-->
+        <!--!SECTION TOP-->
 
+
+        <!--SECTION ABOUT-->
+
+        <!--TODO ABOUT-->
         <div id="about_html">
          </br><h1 id="title">ABOUT</h1>
                 <p style="margin-top:-25px">_____________</p>
                 <p>This board are ... </p></br>
         </div>
 
-        <!--MOTORS-->
+        <!--!SECTION ABOUT-->
 
+        
+        <!--SECTION MOTORS-->
+
+        <!--TODO MOTORS-->
         <div id="motors_html">
          </br><h1 id="title">MOTORS</h1>
                 <p style="margin-top:-25px">_____________</p>
                 <p>This motors are ... </p></br>
         </div>
 
-        <!--RESISTORS-->
+        <!--!SECTION MOTORS-->
 
+
+        <!--SECTION RESISTORS-->
+
+        <!--TODO RESISTORS-->
         <div  id="resistors_html">
          </br><h1 id="title">RESISTORS</h1>
                 <p style="margin-top:-25px">_____________</p>
                 <p>This resistors are ... </p></br>
         </div>
-        
-        <!--PHOTOTRANSISTORS-->
 
+        <!--!SECTION RESISTORS-->
+        
+        
+        <!--SECTION PHOTOTRANSISTORS-->
+
+        <!--TODO PHOTOTRANSISTORS-->
         <div  id="phototransistors_html">
          </br><h1 id="title">PHOTOTRANSISTORS</h1>
                 <p style="margin-top:-25px">_____________</p>
                 <p>This fototransistors are ... </p></br>
         </div>
 
-        <!--LEDS-->
+        <!--!SECTION PHOTOTRANSISTORS-->
 
+
+        <!--SECTION LEDS-->
+
+        <!--TODO LEDS-->
         <div  id="leds_html">
          </br><h1 id="title">LEDS</h1>
                 <p style="margin-top:-25px">_____________</p>
                 <p>This leds are ... </p></br>
         </div>
 
-        <!--CONECTIONS-->
+        <!--!SECTION LEDS-->
 
+
+        <!-- SECTION CONECTIONS-->
+        
+        c
         <div  id="conections_html">
             </br><h1 id="title">FLAT CABLE</h1>
                 <p style="margin-top:-25px">_____________</p>
                 <img src="imagens/BoardModel/FLAT.PNG" usemap="#Flatmap" style="margin-bottom: 100px"/></br>
         </div>
 
-        <!--GND-->
+        <!--!SECTION CONECTIONS-->
 
+
+        <!--SECTION GND-->
+
+        <!--TODO GND-->
         <div  id="gnd_html">
             </br><h1 id="title">GND</h1>
                 <p style="margin-top:-25px">_____________</p></br>
         </div>
 
-        <!--VCC-->
+        <!--!SECTION GND-->
 
+
+        <!--SECTION VCC-->
+
+        <!--TODO VCC-->
         <div  id="vcc_html">
             </br><h1 id="title">VCC</h1>
                 <p style="margin-top:-25px">_____________</p></br>
         </div>
 
-        <!--HASBALL-->
+        <!--!SECTION VCC-->
 
+
+        <!--SECTION HASBALL-->
+
+        <!--TODO HASBALL-->
         <div  id="hasball_html">
             </br><h1 id="title">HASS BALL</h1>
                 <p style="margin-top:-25px">_____________</p></br>
+
         </div>
 
-        <!--INFO-->
+        <!--!SECTION HASBALL-->
 
+
+        <!--SECTION INFO-->
+
+        <!--NOTE div#id = info_html-->
+        <!--Página de informações-->
         <div  id="info_html">
             </br><h1 id="title">informações</h1>
             <p style="margin-top:-25px">_____________</p>
@@ -107,6 +165,11 @@
             <p id="p_info2">&nbsp;&nbsp;&nbsp;&nbsp;As páginas auxiliares, botões e funcionalidades adicionais também podem ser ativadas seguindo alguns comandos de teclado executando assim as mesmas funcionalidades que o cursor tem. Para ver cada funcionalidade clique no teclado ao lado ou <a onclick="keyboardf()" class="pointer" style="color: skyblue;">clique aqui</a> para ser redirecionado para as instruções de teclado.</p><img style="margin-right: 525px;margin-top:-180px;" onclick="keyboardf()" class="pointer" src="imagens/elements/keyboard.png"/>
             <p id="p_info1" style="margin-top: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
         </br></div>
+
+        <!--!SECTION INFO-->
+
+
+        <!--SECTION TECLADO-->
 
         <!--TECLADO-->
 
@@ -213,9 +276,12 @@
             </ul>
         </br></div>
 
-    </div>
+        <!--!SECTION TECLADO-->
 
-    <!--INICIAL PAGE-->
+    </div>
+    <!-- !SECTION AUXILIAR PAGES--> 
+    
+    <!--SECTION INICIAL PAGE-->
     <div id="imagelogo">
             <a href=""><img src="imagens/externImgs/APRSTEST.png" /></a>
     </div> 
@@ -414,6 +480,9 @@
         </div>
     </div>
 <div id="nav" style="padding: 25px;"></div>
+
+    <!--!SECTION INICIAL PAGE-->
+
     <script type="text/javascript" src="functions.js">  </script>
 </body>
 </html>
